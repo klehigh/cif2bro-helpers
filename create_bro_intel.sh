@@ -23,7 +23,7 @@ fi
 for pair in $FEEDS;
 do
 	IFS=:; set $pair
-	echo "cif -q $1 -c $2 -p bro >$OUTFILE"
+	cif -q $1 -c $2 -p bro >>$OUTFILE
 	if [ $? -ne 0 ];
 	then
 		echo "Failed to download intel file. Bailing out!"
