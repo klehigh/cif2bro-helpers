@@ -11,7 +11,7 @@ OUTFILE="/path/on/webserver/intel.txt"
 # copy last output file to .bak extension, just in case
 if [ -e $OUTFILE ];
 then
-	cp $OUTFILE $OUTFILE.bak
+	mv $OUTFILE $OUTFILE.bak
 	if [ $? -ne 0 ];
 	then
 		echo "Failed to make backup of intel file.  Bailing out!"
