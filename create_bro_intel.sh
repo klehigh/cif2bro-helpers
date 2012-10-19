@@ -11,13 +11,16 @@ OUTFILE="/path/on/webserver/intel.txt"
 # copy last output file to .bak extension, just in case
 if [ -e $OUTFILE ];
 then
-	mv $OUTFILE $OUTFILE.bak
+	cp $OUTFILE $OUTFILE.bak
 	if [ $? -ne 0 ];
 	then
 		echo "Failed to make backup of intel file.  Bailing out!"
 		exit 1
 	fi
 fi
+
+# let's truncate $OUTFILE via a lazy echo
+echo >$OUTFILE
 
 # download CIF data in Bro format
 for pair in $FEEDS;
