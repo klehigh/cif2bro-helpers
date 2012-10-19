@@ -1,0 +1,17 @@
+These are shell scripts to help get CIF data into Bro
+
+Dependencies : 
+  - The Bro plugin for CIF
+  - The CIF client
+  - An API key for your CIF install (or other appropriate credentials)
+  - curl
+
+Files :
+  - create_bro_intel.sh
+    - Pull current CIF feeds and output in Bro format
+  - update_bro_intel.sh
+    - grab current Bro formatted CIF data from a web server and overwrite the intel file
+
+To Do :
+  * Maybe someday it should transparently support wget / fetch
+  * Uh, that's it.
