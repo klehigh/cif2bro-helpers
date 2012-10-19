@@ -20,7 +20,7 @@ then
 fi
 
 # let's truncate $OUTFILE via a lazy echo
-echo >$OUTFILE
+echo -n >$OUTFILE
 
 # download CIF data in Bro format
 for pair in $FEEDS;
