@@ -1,0 +1,31 @@
+# detailed install instructions for those who need them
+
+Assumptions:
+   1) you have installed the cif client and the Bro output plugin on the host
+      where you will be running create_bro_intel.sh.  installation of this is
+      out of scope for this document.
+   2) you have a valid CIF API key installed in $HOME of the user running this
+      script.
+   3) you have tested the cif client and bro output plugin.
+
+create_bro_intel.sh
+----
+1) install create_bro_intel.sh on a web server or on your Bro manager node.
+  a) define $FEEDS variable if you prefer different feeds or confidence values.
+  b) define $OUTFILE variable to your preferred location.  if you are running 
+     this directly on your manager this should be the location you defined in
+     $BROPATH/share/bro/site/local.bro.
+  c) ensure the user running create_bro_intel.sh has write permissions to the
+     value of $OUTFILE and the directory containing it.
+2) setup a cron job to run this script.  keep in mind it is poor form to pull the CIF bits more frequently than once per hour.
+3) if you are running this on your Bro manager, celebrate.  you're done.
+
+update_bro_intel.sh
+----
+1) install update_bro_intel.sh on your Bro manager node.
+  a) define $WEBPATH to point at the webserver with the generated intel file.
+  b) define $INTELFILE .  The default value is most likely fine.
+  c) define $DLTOOL and $DLARGS if you are not using curl.
+  d) ensure user who runs this script has write permissions to intel.txt.
+2) setup a cron job to run this script.
+3) start catching bad guys!
