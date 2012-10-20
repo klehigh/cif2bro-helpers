@@ -1,6 +1,6 @@
 These are shell scripts to help get CIF data into Bro
 
-You can use create_bro_intel.sh directly on a Bro manager or run it on a webserver and use update_bro_intel.sh on your Bro manager node(s).
+You can use create_bro_intel.sh directly on a Bro manager or run it on a webserver and use update_bro_intel.sh on your Bro manager node(s).  See INSTALL for detailed install steps.
 
 Dependencies : 
   - The Bro plugin for CIF
