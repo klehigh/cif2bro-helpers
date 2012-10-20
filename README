@@ -1,19 +1,20 @@
 These are shell scripts to help get CIF data into Bro
 
-You can use create_bro_intel.sh directly on a Bro manager or run it on a webserver and use update_bro_intel.sh on your sensors.
+You can use create_bro_intel.sh directly on a Bro manager or run it on a webserver and use update_bro_intel.sh on your Bro manager node(s).
 
 Dependencies : 
   - The Bro plugin for CIF
   - The CIF client
   - An API key for your CIF install (or other appropriate credentials)
-  - curl
+  - some download tool if you are using update_bro_intel.sh .  like curl, 
+    wget, or fetch
 
 Files :
   - create_bro_intel.sh
     - Pull current CIF feeds and output in Bro format
+    - supports a list of feeds and per-feed confidence values.
   - update_bro_intel.sh
     - grab current Bro formatted CIF data from a web server and overwrite the intel file
 
 To Do :
-  * Maybe someday it should transparently support wget / fetch
-  * Uh, that's it.
+  * nothing.
