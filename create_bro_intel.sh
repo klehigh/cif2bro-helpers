@@ -36,10 +36,9 @@ do
 	# download feeds via cif and pass thru egrep to remove headers
 	cif -q "$1" -c "$2" -p bro |egrep -v '^#' >>$OUTFILE
 	# check our return code and fail if we get non-zero return code
-	if [ $? -ne 0 ];
+	if [ ${PIPESTATUS[0]} -ne 0 ];
 	then
-		echo "Failed to download intel file. Bailing out!"
-		exit 1
+		echo "Failed to download $1 $2 via cif client."
 	fi
 done
 
