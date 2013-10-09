@@ -15,7 +15,7 @@ INTELFILE='/usr/local/bro/share/bro/site/intel.txt'
 #DLARGS="-b -l -a -h"
 
 # run download tool and overwrite existing intel file
-${DLTOOL:-curl} ${DLARGS:--s} $WEBPATH >$INTELFILE
+${DLTOOL:-curl} ${DLARGS:--s} "$WEBPATH" >$INTELFILE
 
 # check our return value and bail if we fail
 if [ $? -ne 0 ];
